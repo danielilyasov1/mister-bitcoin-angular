@@ -1,15 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/user.model';
+// import { BitcoinService } from 'src/app/services/bitcoin.service';
+import { UserService } from 'src/app/services/user.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  
+  // user: User 
+  // bitcoinRate$: Observable<number>
 
-  constructor() { }
+  // constructor(private bitcoinService: BitcoinService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    //   this.bitcoinRate$ = (this.user)? this.bitcoinService.getRate(this.user.coins) : this.bitcoinService.getRate(100)
+    // this.userSubscriber = this.userService.user$.subscribe(user => this.user = user)
   }
 
 }
