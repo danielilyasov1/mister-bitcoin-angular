@@ -7,9 +7,8 @@ export class Contact {
         public phone: string = '') {
     }
 
-    setId?(id: string = 'r101') {
-        // Implement your own set Id
-        this._id = id
+    setId?() {
+        this._id = Math.random() * 1000 + ''
     }
 }
 

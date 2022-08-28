@@ -3,7 +3,6 @@ import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
 import { Contact } from '../models/contact.model';
 
 
-
 const CONTACTS = [
     {
         "_id": "5a56640269f443a5d64b32ca",
@@ -137,12 +136,9 @@ export class ContactService {
     }
 
 
-    public loadContacts(filterBy: { term: string }): void {
+    public loadContacts(): void {
         let contacts = this._contactsDb;
-        if (filterBy && filterBy.term) {
-            // contacts = this._filter(contacts, filterBy.term)
-        }
-        this._contacts$.next(this._sort(contacts))
+        this._contacts$.next(contacts)
     }
 
 
@@ -176,7 +172,7 @@ export class ContactService {
     private _addContact(contact: Contact) {
         //mock the server work
         const newContact = new Contact(contact.name, contact.email, contact.phone);
-        if (typeof newContact.setId === 'function') newContact.setId(getRandomId());
+        if (typeof newContact.setId === 'function') newContact.setId();
         this._contactsDb.push(newContact)
         this._contacts$.next(this._sort(this._contactsDb))
     }
@@ -193,23 +189,32 @@ export class ContactService {
         })
     }
 
-    // private _filter(contacts, term) {
-    //     term = term.toLocaleLowerCase()
-    //     return contacts.filter(contact => {
-    //         return contact.name.toLocaleLowerCase().includes(term) ||
-    //             contact.phone.toLocaleLowerCase().includes(term) ||
-    //             contact.email.toLocaleLowerCase().includes(term)
-    //     })
-    // }
-}
-
-
-function getRandomId(length = 8): string {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    for (var i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() *
-            characters.length));
+    private _filter(contacts: Contact[], term: string) {
+        term = term.toLocaleLowerCase()
+        return contacts.filter(contact => {
+            return contact.name.toLocaleLowerCase().includes(term) ||
+                contact.phone.toLocaleLowerCase().includes(term) ||
+                contact.email.toLocaleLowerCase().includes(term)
+        })
     }
-    return result;
+
+    // public getEmptyContact() {
+    //     return {
+    //         name: 'New Contact Name',
+    //         email: 'NewEmail@Noam.com',
+    //         phone: '0505050505'
+    //     }
+    // }
+
 }
+
+
+// function getRandomId(length = 8): string {
+//     let result = '';
+//     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//     for (var i = 0; i < length; i++) {
+//         result += characters.charAt(Math.floor(Math.random() *
+//             characters.length));
+//     }
+//     return result;
+// }

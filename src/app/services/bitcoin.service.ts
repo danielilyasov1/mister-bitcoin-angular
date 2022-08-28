@@ -5,8 +5,6 @@ import { PriceData } from "../models/price.data.model";
 import { StorageService } from "./storage.service";
 
 
-
-
 @Injectable({
     providedIn: 'root'
 })
