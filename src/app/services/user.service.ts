@@ -19,9 +19,9 @@ export class UserService {
   public user$ = this._user$.asObservable()
 
 
-  public getUser() {
-    return this.user$
-  }
+  // public getUser() {
+  //   return this.user$
+  // }
 
   signUp(name: string) {
     let user = {

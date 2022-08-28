@@ -12,7 +12,7 @@ export class AuthService {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(this.isLoggedIn)
-      }, 1000)
+      }, 2000)
     })
   }
 }

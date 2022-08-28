@@ -174,7 +174,7 @@ export class ContactService {
     public deleteContact(id: string) {
         //mock the server work
         this._contactsDb = this._contactsDb.filter(contact => contact._id !== id)
-        this._contacts$.next(this._contactsDb)
+        this.storageService.saveToStorage(KEY, this._contactsDb)
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._contactsDb)
     }
