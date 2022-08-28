@@ -10,10 +10,10 @@
     <ng-template #userLogin>
         <div class="homepage-container">
             <img src="./assets/icons/bitcoin.png" />
-            <form>
+            <form (ngSubmit)="onEnterName()">
                 <h1>Hello New User! Please Login</h1>
-                <input placeholder="Enter user name" [(ngModel)]="nickname" name=nickname />
-                <button class="button-3" (click)="onEnterName()">Send!</button>
+                <input placeholder="Enter user name" [(ngModel)]="nickname" name="nickname" />
+                <button class="button-3">Enter!</button>
             </form>
         </div>
     </ng-template>

@@ -2,6 +2,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app-root/app.component';
@@ -13,6 +14,8 @@ import { ContactListComponent } from './cpms/contact-list/contact-list.component
 import { ContactPreviewComponent } from './cpms/contact-preview/contact-preview.component';
 import { ContactFilterComponent } from './cpms/contact-filter/contact-filter.component';
 import { FilterArrPipe } from './pipes/filter-arr.pipe';
+import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
+import { EditContactComponent } from './pages/edit-contact/edit-contact.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { FilterArrPipe } from './pipes/filter-arr.pipe';
     ContactListComponent,
     ContactPreviewComponent,
     ContactFilterComponent,
-    FilterArrPipe
+    FilterArrPipe,
+    ContactDetailsComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleChartsModule
+    GoogleChartsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
