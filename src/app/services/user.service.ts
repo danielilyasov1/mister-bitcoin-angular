@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { User } from '../models/user.model';
 import { StorageService } from './storage.service';
+import { Move } from '../models/move.model';
+import { Contact } from '../models/contact.model';
 
 
 @Injectable({
@@ -43,5 +45,18 @@ export class UserService {
     return this.storageService.loadFromSesStorage('userDB')
   }
 
+  addMove(contact: Contact, amount: number) {
+    if (this.user.coins - amount < 0) return console.error('Now Enough Coins')
+    let move: Move = {
+      toId: contact._id!,
+      to: contact.name,
+      at: Date.now(),
+      amount
+    }
+    this.user.coins -= amount
+    this.user.moves.unshift(move)
+    this.storageService.saveToSesStorage('userDB', this.user)
+    this.loadUser()
+  }
 
 }

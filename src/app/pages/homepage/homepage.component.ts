@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { BitcoinService } from 'src/app/services/bitcoin.service';
@@ -16,7 +16,6 @@ export class HomepageComponent implements OnInit {
 
   constructor(
     private contactService: ContactService,
-    private route: ActivatedRoute,
     private router: Router,
     private bitcoinService: BitcoinService,
     private userService: UserService,

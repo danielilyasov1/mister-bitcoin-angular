@@ -19,5 +19,13 @@
       </div>
       <button class="button-3" (click)="onBack()">Go Back</button>
     </div>
+    <div class="trasnfer-container">
+        <h1>Transfer To {{ currContact.name }}</h1>
+        <app-contact-transfer [currContact]="currContact"></app-contact-transfer>
+        <app-transfer-history
+          [contact]="currContact"
+          [user]="user"
+        ></app-transfer-history>
+      </div>
   </section>
   

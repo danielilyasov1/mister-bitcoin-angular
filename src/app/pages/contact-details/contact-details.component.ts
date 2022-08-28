@@ -3,8 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { User } from 'src/app/models/user.model';
-import { ContactService } from 'src/app/services/contact.service';
-import { StorageService } from 'src/app/services/storage.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({

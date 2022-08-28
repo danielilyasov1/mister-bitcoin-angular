@@ -1,6 +1,6 @@
 <section class="homepage">
     <div *ngIf="currUser; else userLogin" class="homepage-container">
-        <img src="./assets/img/bitcoin.png" />
+        <img src="./assets/icons/bitcoin.png" />
         <h1>Welcome Back {{currUser.name}}</h1>
         <h4>Your Coins:{{currUser.coins}}</h4>
         <h4>BTC Value: {{btcValue}}</h4>
@@ -17,5 +17,7 @@
             </form>
         </div>
     </ng-template>
-    
+    <!-- <div *ngIf="currUser?.moves?.length" class="homepage-trans-history">
+        <app-transfer-history [user]="currUser!"></app-transfer-history>
+    </div> -->
 </section>
