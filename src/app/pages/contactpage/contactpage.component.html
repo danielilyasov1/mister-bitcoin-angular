@@ -1,4 +1,5 @@
 <main class="app-contact">
+    <app-contact-filter></app-contact-filter>
     <app-contact-list (onRemove)="onRemoveContact($event)" (onSelect)="selectedContactId=$event"
         [contacts]="(contacts!)"></app-contact-list>
     <a class="add-button" routerLink="edit" title="Add Contact"><img src='./assets/icons/plus.png' /></a>

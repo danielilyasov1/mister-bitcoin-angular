@@ -11,6 +11,8 @@ import { TransactionChartComponent } from './cpms/transaction-chart/transaction-
 import { ContactpageComponent } from './pages/contactpage/contactpage.component';
 import { ContactListComponent } from './cpms/contact-list/contact-list.component';
 import { ContactPreviewComponent } from './cpms/contact-preview/contact-preview.component';
+import { ContactFilterComponent } from './cpms/contact-filter/contact-filter.component';
+import { FilterArrPipe } from './pipes/filter-arr.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ContactPreviewComponent } from './cpms/contact-preview/contact-preview.
     ContactpageComponent,
     ContactListComponent,
     ContactPreviewComponent,
+    ContactFilterComponent,
+    FilterArrPipe
   ],
   imports: [
     BrowserModule,
