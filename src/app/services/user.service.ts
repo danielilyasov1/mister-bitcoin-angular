@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { User } from '../models/user.model';
-import { UtilsService } from './utilService.service';
+import { StorageService } from './storage.service';
 
 
 @Injectable({
@@ -9,20 +9,38 @@ import { UtilsService } from './utilService.service';
 })
 export class UserService {
 
-  private KEY = 'user';
-
-  constructor(private utilService: UtilsService) {
+  constructor(private storageService: StorageService) {
   }
 
   //mock the server
 
-
-  private _user$ = new BehaviorSubject<User>(this.utilService.load(this.KEY) || null)
+  user!: User
+  private _user$ = new BehaviorSubject<User>({} as User)
   public user$ = this._user$.asObservable()
 
 
   public getUser() {
     return this.user$
+  }
+
+  signUp(name: string) {
+    let user = {
+      name: name,
+      coins: 100,
+      moves: [],
+    }
+    this._user$.next(user)
+    return user
+  }
+
+  loadUser() {
+    let user = this.storageService.loadFromSesStorage('userDB')
+    this.user = user
+    this._user$.next(user)
+  }
+
+  getLoggedUser() {
+    return this.storageService.loadFromSesStorage('userDB')
   }
 
 
