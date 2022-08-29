@@ -33,6 +33,6 @@ export class TransactionChartComponent {
       textStyle: { color: '#9bd49b' },
     },
   }
-  width: number = 400
+  width: number = 370
   height: number = 350
 }
