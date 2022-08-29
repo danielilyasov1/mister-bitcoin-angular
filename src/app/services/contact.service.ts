@@ -227,8 +227,8 @@ export class ContactService {
 
     public getEmptyContact() {
         return {
-            name: 'New Contact Name',
-            email: 'NewEmail@gmail.com',
+            name: 'New Contact',
+            email: 'NewEmail@Danielle.com',
             phone: '+1 (972) 535221017'
         }
     }

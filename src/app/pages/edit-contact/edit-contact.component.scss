@@ -1,0 +1,63 @@
+.contact-edit {
+    display: flex;
+    background-color:  rgb(95, 95, 95);
+    border-radius: 3px;
+    color: aliceblue;
+    height: 30rem;
+    width: 20rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 3px 3px 3px 0px rgb(127, 56, 87), inset 2px 2px 8px 0px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+    h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+
+    .contact-img {
+        height: 6rem;
+        width: 6rem;
+        align-self: center;
+    }
+
+    .inputs-container {
+        padding: 15px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 700;
+        width: 100%;
+        padding: 0 100px;
+
+        input {
+            margin: 10px 0;
+            margin-bottom: 20px;
+            font-size: 11px;
+            padding: 6px;
+            border-radius: 3px;
+            outline: none;
+            border: 1px rgb(197, 195, 195) solid;
+
+            &:focus {
+                outline: none;
+                box-shadow: inset 0 0 0 2px #ca3475;
+            }
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 3px;
+            padding: 12px 0px 0px 0px;
+        }
+
+    }
+}
