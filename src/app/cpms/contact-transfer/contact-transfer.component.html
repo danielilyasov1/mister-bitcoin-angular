@@ -1,4 +1,5 @@
 <section class="transfer-container">
+    <app-msg-modal *ngIf="msg" [msg]="this.msg"></app-msg-modal>
     <form (ngSubmit)="onTransfer()">
         <label>Amount:</label>
         <input class="amount-input" [(ngModel)]="amount" name='transfer' id='transfer' type="number" />

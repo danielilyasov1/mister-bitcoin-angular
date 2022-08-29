@@ -46,9 +46,12 @@ export class UserService {
   }
 
   addMove(contact: Contact, amount: number) {
-    if (this.user.coins - amount < 0) return console.error('Now Enough Coins')
+    if (this.user.coins - amount < 0 || amount<1){
+      console.error('Now Enough Coins')
+      return false
+    } 
     let move: Move = {
-      toId: contact._id!,
+      toId: contact._id!, 
       to: contact.name,
       at: Date.now(),
       amount
@@ -57,6 +60,7 @@ export class UserService {
     this.user.moves.unshift(move)
     this.storageService.saveToSesStorage('userDB', this.user)
     this.loadUser()
+    return true
   }
 
 }

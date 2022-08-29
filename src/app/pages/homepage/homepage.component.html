@@ -1,14 +1,13 @@
 <section class="homepage">
   <div *ngIf="currUser; else userLogin" class="homepage-container">
-    <img src="./assets/icons/bitcoin.png" />
     <h1>Welcome Back {{ currUser.name }}</h1>
-    <h4>Your Coins:{{ currUser.coins }}</h4>
+    <h4>You Have <span class="coins">{{ currUser.coins }} Coins</span></h4>
     <h4>BTC Value: {{ btcValue }}</h4>
     <button class="button-3" (click)="onGoToContact()">Go To Contacts</button>
     <app-charts></app-charts>
   </div>
   <ng-template #userLogin>
-    <div class="homepage-container">
+    <div class="log-container">
       <form (ngSubmit)="onEnterName()">
         <h1>Hello New User! Please Login</h1>
         <input

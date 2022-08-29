@@ -1,5 +1,7 @@
 .app-header{
-    // display: flex;
+    h1{
+        cursor: pointer;
+    }
 }
 
 .btn-h{
@@ -7,6 +9,9 @@
     color: black;
     border-color: transparent;
     float: right;
+    cursor: pointer;
+    margin-left: 5px;
+
     img{
         width: 30px;
     }

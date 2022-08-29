@@ -15,9 +15,13 @@ export class ContactTransferComponent {
 
   @Input() currContact!: Contact
   amount: number = 0
+  msg!: string
 
   onTransfer() {
-    this.userService.addMove(this.currContact, this.amount)
+    let result = this.userService.addMove(this.currContact, this.amount)
     this.amount = 0
+    this.msg = result ? 
+              'Transfer was successful' : 
+              'Transfer failed'
   }
 }

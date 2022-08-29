@@ -1,11 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
+  //var
+  $p:#ca3475;
+  $pb:#c55183;
+  $msg:rgb(45, 176, 45);
+
 
 body{
-    background:url('assets/backtoBit.jpg') no-repeat 60% 40%/cover;
+    background:url('assets/backtoBit.jpg') 60% 40%/cover;
     width: 100%;
     min-height: 100vh;
     max-height: 100%;
@@ -13,42 +18,117 @@ body{
     color: aliceblue;
     overflow-x: hidden;
 }
-
+  
 *::-webkit-scrollbar {
-    width: 1px;
-  }
-  *::-webkit-scrollbar-track {
-    background: black;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: rgb(113, 113, 114);
-    border-radius: 20px;
-    border: 3px solid rgb(174, 173, 171);
-  }
+   width: 1px;
+}
+*::-webkit-scrollbar-track {
+  background: black;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(113, 113, 114);
+  border-radius: 20px;
+  border: 3px solid rgb(174, 173, 171);
+}
 
-  input {
-    padding: 6px 12px;
-    border-radius: 3px;
-    outline: none;
-    border: 1px rgb(197, 195, 195) solid;
-    // width: 100%;
-  }
-
-  
-  .button-3 {
-    background-color: #2ea44f;
-    border:transparent;
-    border-radius: 6px;
-    color: aliceblue;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 20px;
-    padding: 6px 16px;
-  }
-
-  .button-3:hover {
-    background-color: #2c974b;
-  }
+input {
+  padding: 6px 12px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px rgb(197, 195, 195) solid;
+}
 
   
+.button-3 {
+  background-color: $p;
+  border:transparent;
+  border-radius: 6px;
+  color: aliceblue;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 6px 16px;
+}
+
+.button-3:hover {
+  background-color: $pb;
+}
+
+.coins{
+  color: #9bd49b;
+}
+
+// helpers
+
+.clean-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-transform: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.full {
+  flex: 1;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+}
+
+.overflow {
+  overflow: auto;
+}

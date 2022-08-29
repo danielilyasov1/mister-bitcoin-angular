@@ -1,3 +1,25 @@
-footer{
+.main-app {
+    padding: 1rem 6rem;
+    flex-grow: 1;
+    width: 100%;
+    overflow: auto;
+    // height: 100vh;
+}
+
+footer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #151515;
+    font-size: 1em;
+    margin-top: 10px;
+    position: relative;
     bottom: 0;
+}
+
+@media screen and(max-width:650px) {
+    .main-app {
+        padding: 1rem 1rem;
+    }
 }
