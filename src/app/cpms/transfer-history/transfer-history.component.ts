@@ -25,7 +25,7 @@ export class TransferHistoryComponent implements OnInit {
   ngOnInit() {
     this.userService.loadUser()
     this.subscription = this.userService.user$.subscribe(user => {
-      this.user = user!
+      this.user = user
       this.contact ?
         this.moves = this.user.moves.filter(move => move['to'] === this.contact?.name)
         : this.moves = this.user.moves

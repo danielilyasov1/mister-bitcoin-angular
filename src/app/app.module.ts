@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 import { AppComponent } from './app-root/app.component';
 import { ChartsComponent } from './pages/charts/charts.component';
 import { PriceChartComponent } from './cpms/price-chart/price-chart.component';
@@ -24,6 +25,7 @@ import { MsgModalComponent } from './cpms/msg-modal/msg-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomepageComponent,
     ChartsComponent,
     PriceChartComponent,
     TransactionChartComponent,

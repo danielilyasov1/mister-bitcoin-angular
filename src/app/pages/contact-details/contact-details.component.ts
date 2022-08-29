@@ -4,7 +4,6 @@ import { Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
-
 @Component({
   selector: 'app-contact-details',
   templateUrl: './contact-details.component.html',

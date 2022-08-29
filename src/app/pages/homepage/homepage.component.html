@@ -1,25 +1,28 @@
 <section class="homepage">
-    <h1>helo</h1>
-    <div *ngIf="currUser; else userLogin" class="homepage-container">
-        <img src="./assets/icons/bitcoin.png" />
-        <h1>Welcome Back {{currUser.name}}</h1>
-        <h4>Your Coins:{{currUser.coins}}</h4>
-        <h4>BTC Value: {{btcValue}}</h4>
-        <button class="button-3" (click)="onGoToContact()">Go To Contacts</button>
+  <div *ngIf="currUser; else userLogin" class="homepage-container">
+    <img src="./assets/icons/bitcoin.png" />
+    <h1>Welcome Back {{ currUser.name }}</h1>
+    <h4>Your Coins:{{ currUser.coins }}</h4>
+    <h4>BTC Value: {{ btcValue }}</h4>
+    <button class="button-3" (click)="onGoToContact()">Go To Contacts</button>
+  </div>
+
+  <ng-template #userLogin>
+    <div class="homepage-container">
+      <img src="./assets/icons/bitcoin.png" />
+      <form (ngSubmit)="onEnterName()">
+        <h1>Hello New User! Please Login</h1>
+        <input
+          [(ngModel)]="nickname"
+          name="nickname"
+          [ngModelOptions]="{ standalone: true }"
+          placeholder="Enter user name"
+        />
+        <button class="button-3">Enter!</button>
+      </form>
     </div>
-    
-    <ng-template #userLogin>
-        <h1>helo</h1>
-        <div class="homepage-container">
-            <img src="./assets/icons/bitcoin.png" />
-            <form (ngSubmit)="onEnterName()">
-                <h1>Hello New User! Please Login</h1>
-                <!-- <input placeholder="Enter user name" [(ngModel)]="nickname" name="nickname" /> -->
-                <button class="button-3">Enter!</button>
-            </form>
-        </div>
-    </ng-template>
-    <!-- <div *ngIf="currUser?.moves?.length" class="homepage-trans-history">
-        <app-transfer-history [user]="currUser!"></app-transfer-history>
-    </div> -->
+  </ng-template>
+  <div *ngIf="currUser?.moves?.length" class="homepage-trans-history">
+    <app-transfer-history></app-transfer-history>
+  </div>
 </section>
