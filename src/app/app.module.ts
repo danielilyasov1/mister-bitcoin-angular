@@ -21,6 +21,7 @@ import { EditContactComponent } from './pages/edit-contact/edit-contact.componen
 import { ContactTransferComponent } from './cpms/contact-transfer/contact-transfer.component';
 import { TransferHistoryComponent } from './cpms/transfer-history/transfer-history.component';
 import { MsgModalComponent } from './cpms/msg-modal/msg-modal.component';
+import { AppHeaderComponent } from './cpms/app-header/app-header.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MsgModalComponent } from './cpms/msg-modal/msg-modal.component';
     EditContactComponent,
     ContactTransferComponent,
     TransferHistoryComponent,
-    MsgModalComponent
+    MsgModalComponent,
+    AppHeaderComponent
   ],
   imports: [
     HttpClientModule,

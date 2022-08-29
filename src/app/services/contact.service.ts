@@ -229,19 +229,9 @@ export class ContactService {
         return {
             name: 'New Contact Name',
             email: 'NewEmail@gmail.com',
-            phone: '0535221017'
+            phone: '+1 (972) 535221017'
         }
     }
 
 }
 
-
-// function getRandomId(length = 8): string {
-//     let result = '';
-//     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     for (var i = 0; i < length; i++) {
-//         result += characters.charAt(Math.floor(Math.random() *
-//             characters.length));
-//     }
-//     return result;
-// }

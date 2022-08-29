@@ -1,11 +1,11 @@
-<section class="contact-preview" (click)="onSelect.emit(contact._id)">
+<section class="contact-preview" [routerLink]="['/contact',contact._id]" (click)="onSelect.emit(contact._id)">
     <div class="contact-info">
         <div class="contact-img" style="background-image: url(https://robohash.org/{{contact._id}}?set=set4);"></div>
         <h1>{{contact.name}}</h1>
+        <h1>{{contact.phone}}</h1>
+        
     </div>
     <div class="contact-actions">
-        <button><a [routerLink]="['/contact',contact._id]" title="Contact Deatils"><img class="contact-action-img"
-                    src='./assets/icons/about.svg' /></a></button>
         <button><a [routerLink]="['edit',contact._id]" title="Edit Contct"><img class="contact-action-img"
                     src='./assets/icons/edit.png'/></a></button>
         <button (click)="onRemoveContact()" title="Remove Contact"><img class="contact-action-img"
